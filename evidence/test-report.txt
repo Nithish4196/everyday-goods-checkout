@@ -1,0 +1,8 @@
+﻿
+Running 3 tests using 1 worker
+
+  ok 1 [chromium] › tests\checkout.spec.js:7:1 › successful checkout shows confirmation with valid reference and total (577ms)
+  ok 2 [chromium] › tests\checkout.spec.js:18:1 › missing name displays inline error, preserves cart, and prevents order (300ms)
+  ok 3 [chromium] › tests\checkout.spec.js:33:1 › updating t-shirt quantity recalculates line total and order total (332ms)
+
+  3 passed (1.9s)

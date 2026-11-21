@@ -1,0 +1,15 @@
+{
+  "name": "mini-checkout",
+  "version": "1.0.0",
+  "description": "Mini checkout page with browser test suite",
+  "scripts": {
+    "start": "http-server . -p 3000 -c-1",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "http-server": "^14.1.1"
+  }
+}

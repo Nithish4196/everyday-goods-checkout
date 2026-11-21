@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Everyday Goods | Online Shopping</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="fk-header">
+    <div class="fk-header-top">
+      <div class="fk-header-container">
+        <div class="fk-brand-col">
+          <a href="#products-section" class="fk-brand-link">
+            <span class="fk-logo-text">Everyday Goods</span>
+          </a>
+        </div>
+
+        <div class="fk-search-col">
+          <div class="fk-search-wrapper">
+            <input type="search" id="product-search" class="fk-search-input"
+              placeholder="Search for products, brands and more" aria-label="Search for products" />
+          </div>
+        </div>
+
+        <div class="fk-nav-col">
+          <a href="#cart-section" class="fk-cart-btn" id="nav-cart-btn">
+            <span class="fk-cart-icon" aria-hidden="true">🛒</span>
+            <span>Cart</span>
+            <span class="fk-cart-badge" id="cart-count">2</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="fk-category-bar" aria-label="Product categories">
+      <div class="fk-category-container">
+        <button type="button" class="fk-category-link">Top Offers</button>
+        <button type="button" class="fk-category-link">Men's Fashion</button>
+        <button type="button" class="fk-category-link">Bags & Luggage</button>
+        <button type="button" class="fk-category-link">Accessories</button>
+        <button type="button" class="fk-category-link">SuperCoin Zone</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="fk-main-container">
+    <form id="checkout-form" novalidate>
+      <div class="fk-layout">
+        <!-- Products Column -->
+        <section id="products-section" class="fk-products-column" aria-labelledby="products-heading">
+          <div class="fk-listing-header">
+            <h1 id="products-heading" class="fk-listing-title">Trending Deals</h1>
+            <span class="fk-listing-count">Showing 2 items</span>
+          </div>
+
+          <div id="search-no-results" class="fk-no-results" hidden>
+            No products match your search.
+          </div>
+
+          <div class="fk-products-grid" id="products-grid">
+            <!-- Product 1: T-Shirt -->
+            <article class="fk-product-card">
+              <div class="fk-product-thumb">
+                <img src="assets/tshirt.png" alt="Cotton T-Shirt" class="fk-product-img" />
+              </div>
+              <div class="fk-product-details">
+                <span class="fk-brand-badge">EVERYDAY</span>
+                <h2 class="product-name fk-product-title">Cotton T-Shirt</h2>
+                <div class="fk-rating-row">
+                  <span class="fk-rating-badge">4.3 ★</span>
+                  <span class="fk-rating-count">(1,284)</span>
+                  <span class="fk-assured-tag">Assured</span>
+                </div>
+                <div class="fk-price-row">
+                  <span class="fk-price-current">₹799.00</span>
+                  <span class="fk-price-mrp">₹1,299</span>
+                  <span class="fk-price-discount">38% off</span>
+                </div>
+                <p class="fk-delivery-text">Free delivery by <strong class="fk-delivery-date"
+                    id="delivery-date-tshirt">Wed, 25 Nov</strong></p>
+              </div>
+              <div class="fk-card-actions">
+                <button type="button" class="btn btn-add fk-btn-add" data-testid="product-add-tshirt">Add to
+                  Cart</button>
+                <button type="button" class="btn fk-btn-card-remove" data-remove-product="tshirt"
+                  aria-label="Remove Cotton T-Shirt from cart">Remove</button>
+              </div>
+            </article>
+
+            <!-- Product 2: Tote Bag -->
+            <article class="fk-product-card">
+              <div class="fk-product-thumb">
+                <img src="assets/tote.png" alt="Canvas Tote Bag" class="fk-product-img" />
+              </div>
+              <div class="fk-product-details">
+                <span class="fk-brand-badge">EVERYDAY</span>
+                <h2 class="product-name fk-product-title">Canvas Tote Bag</h2>
+                <div class="fk-rating-row">
+                  <span class="fk-rating-badge">4.5 ★</span>
+                  <span class="fk-rating-count">(892)</span>
+                  <span class="fk-assured-tag">Assured</span>
+                </div>
+                <div class="fk-price-row">
+                  <span class="fk-price-current">₹499.00</span>
+                  <span class="fk-price-mrp">₹899</span>
+                  <span class="fk-price-discount">44% off</span>
+                </div>
+                <p class="fk-delivery-text">Free delivery by <strong class="fk-delivery-date"
+                    id="delivery-date-tote">Wed, 25 Nov</strong></p>
+              </div>
+              <div class="fk-card-actions">
+                <button type="button" class="btn btn-add fk-btn-add" data-testid="product-add-tote">Add to Cart</button>
+                <button type="button" class="btn fk-btn-card-remove" data-remove-product="tote"
+                  aria-label="Remove Canvas Tote Bag from cart">Remove</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Cart Panel Column -->
+        <aside id="cart-section" class="fk-cart-panel" aria-labelledby="cart-title">
+          <div id="cart-panel-content">
+            <div class="fk-cart-header">
+              <h2 id="cart-title" class="fk-cart-title">My Cart</h2>
+            </div>
+
+            <div id="cart-items" class="fk-cart-items-list"></div>
+
+            <div id="cart-empty-message" class="fk-cart-empty-card" hidden>
+              <div class="fk-empty-illustration">🛒</div>
+              <p class="fk-empty-msg-text">Your cart is empty.</p>
+              <button type="button" id="btn-browse" class="fk-btn-browse">Shop Now</button>
+            </div>
+
+            <!-- Price Details Card -->
+            <div class="fk-price-card" id="price-details-card">
+              <h3 class="fk-price-card-title">PRICE DETAILS</h3>
+              <div class="fk-price-line">
+                <span id="price-count-label">Price (2 items)</span>
+                <span id="price-count-amount">₹1,298.00</span>
+              </div>
+              <div class="fk-price-line">
+                <span>Delivery Charges</span>
+                <span class="fk-text-free">FREE</span>
+              </div>
+              <div class="fk-price-line">
+                <span>Estimated Delivery</span>
+                <span class="fk-text-delivery" id="summary-delivery-date">Wed, 25 Nov</span>
+              </div>
+              <div class="fk-price-divider"></div>
+              <div class="fk-price-line fk-total-line">
+                <span class="fk-total-label">Total Payable</span>
+                <span id="order-total" class="fk-total-amount" data-testid="order-total"
+                  aria-live="polite">₹1,298.00</span>
+              </div>
+              <div id="cart-savings-row" class="fk-savings-strip">
+                You will save <span id="cart-savings-amount">₹900.00</span> on this order
+              </div>
+            </div>
+
+            <!-- Customer & Delivery Address Card -->
+            <fieldset class="fk-customer-card">
+              <legend class="fk-customer-legend">Delivery Details</legend>
+              <div class="fk-form-group">
+                <label for="name-input" class="fk-form-label">Full Name</label>
+                <input type="text" id="name-input" name="fullName" class="fk-form-input" data-testid="name-input"
+                  autocomplete="name" placeholder="Enter receiver's name" aria-describedby="name-error" required />
+                <div id="name-error" class="error-message fk-error-text" data-testid="name-error" role="alert"
+                  aria-live="polite"></div>
+              </div>
+              <div class="fk-form-group" style="margin-top: 10px;">
+                <label for="address-input" class="fk-form-label">Delivery Address</label>
+                <textarea id="address-input" name="address" class="fk-form-input fk-form-textarea" rows="2"
+                  placeholder="House no., street, area, city, pincode">Flat 402, Green Glen Layout, Bellandur, Bengaluru - 560103</textarea>
+              </div>
+              <div class="fk-delivery-badge-row">
+                <span class="fk-delivery-badge-label">Guaranteed Delivery:</span>
+                <strong class="fk-delivery-badge-val" id="guaranteed-delivery-date">Wed, 25 Nov 2026</strong>
+              </div>
+            </fieldset>
+
+            <div id="cart-error" class="error-message fk-error-text fk-cart-error" data-testid="cart-error" role="alert"
+              aria-live="polite" tabindex="-1"></div>
+
+            <div class="fk-action-bar">
+              <button type="submit" id="place-order" class="btn fk-btn-place-order" data-testid="place-order">PLACE
+                ORDER</button>
+            </div>
+          </div>
+
+          <div id="confirmation-container"></div>
+        </aside>
+      </div>
+    </form>
+  </main>
+
+  <footer class="fk-footer">
+    <div class="fk-footer-content">
+      <p class="fk-footer-title">Everyday Goods — Authentic Marketplace Experience</p>
+      <p class="fk-footer-sub">Demo store. No payment is taken.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
